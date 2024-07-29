@@ -31,3 +31,6 @@ Script includes possibility to automatically type your credentials in Web Interf
 
 ### Runing
 Just clone, install AHK and paste the shortcut of ahk file into Win+R → `shell:startup` folder.
+
+## Changes
+- 2024-07-29: Fixed new icon and added activation of Citrix window
