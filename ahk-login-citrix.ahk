@@ -137,6 +137,7 @@ FindChromeLoginScreenAndLogin(cred)
                 FoundY := findLoginResult.FoundY
                 Sleep, 200
                 Click, %FoundX%, %FoundY% Left, 1
+                
 
                 Loop
                 {
@@ -149,6 +150,10 @@ FindChromeLoginScreenAndLogin(cred)
                     FoundY := findLoginResult.FoundY-20
                     Sleep, 200
                     Click, %FoundX%, %FoundY% Left, 1
+
+                    ; Wait for existance and activate Citrix Window
+                    WinWait, %CitrixWindowName%,,
+                    WinActivate, %CitrixWindowName%,,
                 }
             }
 
