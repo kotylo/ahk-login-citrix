@@ -102,7 +102,7 @@ FindChromeLoginScreenAndLogin(cred)
     PixelSearch, FoundX, FoundY, 0, 0, 3440, 1440, 0x3C4B56, 15, Fast RGB
     If ErrorLevel = 0
     {
-        findLoginResult := FindImage("images-to-find\login-button.png")
+        findLoginResult := FindImage("images-to-find\login-button-bg.png")
         If findLoginResult.ErrorLevel = 0
         {
             FoundY := findLoginResult.FoundY - 90
