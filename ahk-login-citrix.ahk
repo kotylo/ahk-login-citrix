@@ -167,7 +167,7 @@ FindChromeLoginScreenAndLogin(cred)
 FindImage(path)
 {
     CoordMode, Pixel, Window
-    ImageSearch, FoundX, FoundY, 0, 0, 3440, 1440, *15 %path%
+    ImageSearch, FoundX, FoundY, 0, 0, 3440, 1440, *40 %path%
     return {ErrorLevel: ErrorLevel, FoundX: FoundX, FoundY: FoundY}
 }
 
