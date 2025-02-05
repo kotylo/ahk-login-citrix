@@ -99,7 +99,7 @@ FindChromeLoginScreenAndLogin(cred)
     }
     Sleep, 333
     CoordMode, Pixel, Window
-    PixelSearch, FoundX, FoundY, 0, 0, 3440, 1440, 0x3C4B56, 15, Fast RGB
+    PixelSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, 0x3C4B56, 15, Fast RGB
     If ErrorLevel = 0
     {
         findLoginResult := FindImage("images-to-find\login-button-bg.png")
@@ -117,15 +117,9 @@ FindChromeLoginScreenAndLogin(cred)
             Sleep, 200
             Send, {Enter}
 
-            ; Wait for login button to disappear
-            Loop
-            {
-                findLoginResult := FindImage("images-to-find\login-finished.png")
-            }
-            Until findLoginResult.ErrorLevel = 0
-
             ; Find DESKTOP icon, click there
             ; Find W11 text, click there
+            ; MsgBox, "Searching for desktops"
             Loop
             {
                 findLoginResult := FindImage("images-to-find\desktops.png")
@@ -167,7 +161,7 @@ FindChromeLoginScreenAndLogin(cred)
 FindImage(path)
 {
     CoordMode, Pixel, Window
-    ImageSearch, FoundX, FoundY, 0, 0, 3440, 1440, *40 %path%
+    ImageSearch, FoundX, FoundY, 0, 0, A_ScreenWidth, A_ScreenHeight, *40 %path%
     return {ErrorLevel: ErrorLevel, FoundX: FoundX, FoundY: FoundY}
 }
 
